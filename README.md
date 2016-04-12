@@ -1,13 +1,13 @@
 docker-periodic-rsync
 =====================
 
-***docker-periodic-rsync*** is an simple [*Docker*](http://www.docker.com/) image with *cron*, *ssh* and *rsync* for one-time or periodic remote *rsync* copy jobs.
+***docker-periodic-rsync*** is a [*Docker*](http://www.docker.com/) image based on *Debian 8* with *cron*, *ssh* and [*rsync*](http://en.wikipedia.org/wiki/Rsync) for one-time or periodic remote *rsync* copy jobs.
 
 Open source project:
 
 - <i class="fa fa-fw fa-home"></i> home: <http://gw.tnode.com/docker/periodic-rsync/>
 - <i class="fa fa-fw fa-github-square"></i> github: <http://github.com/gw0/docker-periodic-rsync/>
-- <i class="fa fa-fw fa-laptop"></i> technology: *Debian*, *cron*, *ssh*, *rsync*
+- <i class="fa fa-fw fa-laptop"></i> technology: *debian*, *cron*, *ssh*, *rsync*
 - <i class="fa fa-fw fa-database"></i> docker hub: <https://hub.docker.com/r/gw000/periodic-rsync/>
 
 
