@@ -3,19 +3,20 @@
 FROM debian:jessie
 MAINTAINER gw0 [http://gw.tnode.com/] <gw.2016@tnode.com>
 
+# install debian packages
 ENV DEBIAN_FRONTEND noninteractive
-WORKDIR /root/
-
-# install packages
 RUN apt-get update -qq \
- && apt-get install -y \
+ && apt-get install --no-install-recommends -y \
     cron \
     rsync \
-    openssh-client
+    openssh-client \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 # remove default cron jobs
 RUN rm -f /etc/cron.*/*
 
 # expose interfaces
-VOLUME /root/.ssh
-VOLUME /data
+#VOLUME /etc/crontab
+#VOLUME /root/.ssh
+#VOLUME /data
