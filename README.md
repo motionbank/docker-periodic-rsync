@@ -21,16 +21,16 @@ Requirements:
 - `/data`: mount preferred target directory
 - `/etc/crontab`: mount your crontab file (for periodic usage)
 
-For one-time usage:
+For one-time usage (need specify command):
 
 ```bash
 $ docker run -it --rm -v /srv/backup/.ssh:/root/.ssh -v /srv/backup/data:/data gw000/periodic-rsync rsync -zave ssh user@server.remote:dir/ /data
 ```
 
-For periodic usage (prepare crontab file `/srv/backup/crontab`):
+For periodic usage (prepare crontab file `/srv/backup/cron.d/backup`):
 
 ```
-# /etc/crontab: system-wide crontab
+# /etc/cron.d/backup: system-wide crontab
 SHELL=/bin/sh
 
 # m h dom mon dow user  command
@@ -38,7 +38,7 @@ SHELL=/bin/sh
 ```
 
 ```bash
-$ docker run -d -v /srv/backup/.ssh:/root/.ssh -v /srv/backup/crontab:/etc/crontab -v /srv/backup/data:/data --name periodic-rsync gw000/periodic-rsync cron -f
+$ docker run -d -v /srv/backup/.ssh:/root/.ssh -v /srv/backup/cron.d:/etc/cron.d -v /srv/backup/data:/data --name backup gw000/periodic-rsync
 ```
 
 

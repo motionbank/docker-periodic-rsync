@@ -16,7 +16,9 @@ RUN apt-get update -qq \
 # remove default cron jobs
 RUN rm -f /etc/cron.*/*
 
-# expose interfaces
-#VOLUME /etc/crontab
+# expose
+#VOLUME /etc/cron.d
 #VOLUME /root/.ssh
 #VOLUME /data
+
+CMD ["cron", "-f"]
