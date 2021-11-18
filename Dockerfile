@@ -1,6 +1,6 @@
 # Periodic rsync copy jobs
 
-FROM debian:jessie
+FROM debian:bullseye
 MAINTAINER gw0 [http://gw.tnode.com/] <gw.2016@tnode.com>
 
 # install debian packages
